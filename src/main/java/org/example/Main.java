@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Random;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
@@ -57,6 +57,20 @@ public class Main {
         System.out.println("exercise 3");
         // exercise 2 is in independent Project
         //exercise 3
+        System.out.println("/////////////////////////\nenter number to calculate Fibonacci\n/////////////////////////");
+        Scanner sc = new Scanner(System.in);
+        int c = sc.nextInt();
+        Fibonacci fb = new Fibonacci(c);
+        long start5 = System.currentTimeMillis();
+        int g5 = fb.compute();
+        long execTime5 = System.currentTimeMillis() - start5;
+        System.out.println("Parallel: Fibonacci is "+ g5);
+        System.out.println("execution time is "+execTime5);
 
+        long start6 = System.currentTimeMillis();
+        int g6 = fb.MemoizationCompute();
+        long execTime6 = System.currentTimeMillis() - start6;
+        System.out.println("Memoization: Fibonacci is "+ g6);
+        System.out.println("execution time is "+execTime6);
     }
 }
